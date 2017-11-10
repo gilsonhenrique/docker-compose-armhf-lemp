@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-    mysql:
+    mariadb:
         image: lsioarmhf/mariadb
         ports:
             - '3306:3306'
