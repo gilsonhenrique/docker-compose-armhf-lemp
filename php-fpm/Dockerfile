@@ -1,5 +1,5 @@
 FROM php:7.1-fpm
-MAINTAINER Wouter De Schuyter <wouter.de.schuyter@gmail.com>
+LABEL authors="Wouter De Schuyter <wouter.de.schuyter@gmail.com>, Awesometic <secugyu@gmail.com>"
 
 RUN apt-get update
 
