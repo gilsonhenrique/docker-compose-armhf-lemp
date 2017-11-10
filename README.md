@@ -11,7 +11,7 @@ Basic docker box for little projects & tests. I base most of my docker boxes on 
 ## Services
 
 - PHP-FPM 7.1
-- MySQL 5.7
+- MariaDB 10.0 (Thanks to [LinuxServer.io](https://github.com/linuxserver/docker-mariadb-armhf/))
 - NGINX 1.13
 
 ## Accessing services
