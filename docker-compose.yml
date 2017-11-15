@@ -6,7 +6,7 @@ services:
         ports:
             - '3306:3306'
         volumes:
-            - ./data/mysql:/var/lib/mysql
+            - ./data/mariadb:/config
         restart: on-failure
         env_file:
             - docker.env
