@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.2.8-fpm
 LABEL authors="Wouter De Schuyter <wouter.de.schuyter@gmail.com>, Awesometic <secugyu@gmail.com>"
 
 RUN apt-get update
