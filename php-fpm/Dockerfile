@@ -1,7 +1,7 @@
 FROM php:7.2.8-fpm
 LABEL authors="Wouter De Schuyter <wouter.de.schuyter@gmail.com>, Awesometic <secugyu@gmail.com>"
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 # Some basic extensions
 RUN docker-php-ext-install -j$(nproc) json mbstring opcache pdo pdo_mysql mysqli
