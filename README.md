@@ -1,18 +1,18 @@
-# Basic Docker Web Dev Box
+# Basic Docker web development environment
 
-Basic docker box for little projects & tests. I base most of my docker boxes on this one.
+A few basic docker containers for little projects & tests **for ARM**.
 
 ##  Requirements
 
-- This repo assumes you store your projects in  `~/Projects`.
-- [Docker](https://docs.docker.com/engine/installation/) installed
-- [Docker Compose](https://docs.docker.com/compose/install/) installed
+- This repo assumes you store your projects in  `~/Projects`
+- [Docker](https://docs.docker.com/engine/installation/) is installed
+- [Docker Compose](https://docs.docker.com/compose/install/) is installed
 
 ## Services
 
-- PHP-FPM 7.2.8
-- MariaDB 10.0 (Thanks to [LinuxServer.io](https://github.com/linuxserver/docker-mariadb-armhf/))
-- NGINX 1.15.2
+- PHP-FPM 7.3
+- MariaDB 10.3 (Thanks to [LinuxServer.io](https://hub.docker.com/r/linuxserver/mariadb))
+- NGINX 1.17
 
 ## Accessing services
 

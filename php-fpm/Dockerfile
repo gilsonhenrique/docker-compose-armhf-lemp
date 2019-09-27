@@ -1,19 +1,23 @@
-FROM php:7.2.8-fpm
-LABEL authors="Wouter De Schuyter <wouter.de.schuyter@gmail.com>, Awesometic <secugyu@gmail.com>"
+FROM php:7.3-fpm
+LABEL maintainer="Wouter De Schuyter <wouter.de.schuyter@gmail.com>, Yang Deokgyu <secuguy@gmail.com>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
-# Some basic extensions
-RUN docker-php-ext-install -j$(nproc) json mbstring opcache pdo pdo_mysql mysqli
-
-# Curl
-RUN apt-get install -y libcurl4-openssl-dev
-RUN docker-php-ext-install -j$(nproc) curl
-
-# GD
-RUN apt-get install -y libpng-dev libjpeg-dev
-RUN docker-php-ext-install -j$(nproc) gd
-
-# Intl
-RUN apt-get install -y libicu-dev
-RUN docker-php-ext-install -j$(nproc) intl
+RUN \
+  # Some basic extensions
+  docker-php-ext-install -j$(nproc) json mbstring opcache pdo pdo_mysql mysqli && \
+  # Curl
+  apt-get install -y libcurl4-openssl-dev && \
+  docker-php-ext-install -j$(nproc) curl && \
+  apt-get purge libcurl4-openssl-dev -y && \
+  # GD
+  apt-get install -y libpng-dev libjpeg-dev && \
+  docker-php-ext-install -j$(nproc) gd && \
+  apt-get purge libpng-dev libjpeg-dev -y && \
+  # Intl
+  apt-get install -y libicu-dev && \
+  docker-php-ext-install -j$(nproc) intl && \
+  apt-get purge libicu-dev -y && \
+  # More cleanup
+  apt-get autoremove --purge -y && \
+  apt-get clean
