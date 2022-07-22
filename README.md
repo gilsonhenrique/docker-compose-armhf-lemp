@@ -10,7 +10,7 @@ A few basic docker containers for little projects & tests **for ARM**.
 
 ## Services
 
-- PHP-FPM 7.3
+- PHP-FPM 7.4
 - MariaDB 10.3 (Thanks to [LinuxServer.io](https://hub.docker.com/r/linuxserver/mariadb))
 - NGINX 1.17
 

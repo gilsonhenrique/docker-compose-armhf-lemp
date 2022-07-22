@@ -1,5 +1,4 @@
-FROM php:7.3-fpm
-LABEL maintainer="Wouter De Schuyter <wouter.de.schuyter@gmail.com>, Yang Deokgyu <secuguy@gmail.com>"
+FROM arm32v7/php:7.4-fpm-buster
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 

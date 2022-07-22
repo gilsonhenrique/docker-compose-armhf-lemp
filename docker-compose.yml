@@ -2,7 +2,7 @@ version: '2'
 
 services:
   mariadb:
-    image: linuxserver/mariadb:armhf
+    image: linuxserver/mariadb:arm32v7-latest
     ports:
       - '3306:3306'
     volumes:
@@ -17,7 +17,7 @@ services:
     env_file:
       - docker.env
   nginx:
-    image: nginx:1.17
+    image: arm32v7/nginx
     ports:
       - '80:80'
     restart: on-failure
