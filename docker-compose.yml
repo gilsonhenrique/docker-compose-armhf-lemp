@@ -1,8 +1,9 @@
-version: '2'
+version: '2.1'
 
 services:
   mariadb:
     image: linuxserver/mariadb:arm32v7-latest
+    container_name: mariadb
     ports:
       - '3306:3306'
     volumes:
@@ -18,6 +19,7 @@ services:
       - docker.env
   nginx:
     image: arm32v7/nginx
+    container_name: nginx
     ports:
       - '80:80'
     restart: on-failure
@@ -26,7 +28,21 @@ services:
       - ~/Projects:/code
   php-fpm:
     build: php-fpm
+    container_name: php-fpm
     restart: on-failure
     volumes:
       - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/custom.ini
       - ~/Projects:/code
+  phpmyadmin:
+    image: arm32v7/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    links:
+      - mariadb
+    ports:
+      - 8183:80
+    environment:
+      - PUID=1000
+      - PGID=1000  
+      - MYSQL_ROOT_PASSWORD=docker
+      - PMA_ARBITRARY=1

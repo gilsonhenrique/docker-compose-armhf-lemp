@@ -12,11 +12,12 @@ A few basic docker containers for little projects & tests **for ARM**.
 
 - PHP-FPM 7.4
 - MariaDB 10.3 (Thanks to [LinuxServer.io](https://hub.docker.com/r/linuxserver/mariadb))
-- NGINX 1.17
+- NGINX 1.
+- phpMyAdmin
 
 ## Accessing services
 
-We're exposing NGINX and MySQL their ports, so you can just go to `http://127.0.0.1/` or `http://localhost/` from your browser and connect to MySQL from your client (eg: [Sequel Pro](https://www.sequelpro.com/)) using `127.0.0.1:3306` or `localhost:3306`.
+We're exposing NGINX and MySQL their ports, so you can just go to `http://127.0.0.1/` or `http://localhost/` from your browser and connect to MySQL from your client (eg: [Sequel Pro](https://www.sequelpro.com/)) using `127.0.0.1:3306` or `localhost:3306` and connect phpMyAdmin 127.0.0.1:8183.
 
 To access MySQL from within your web applications you'll need to use `mysql` as host.
 
@@ -25,6 +26,12 @@ To access MySQL from within your web applications you'll need to use `mysql` as 
 - **Username**: `docker`
 - **Password**: `docker`
 - **Database**: `docker`
+
+### Default phpMyAdmin credentials:
+
+- **Server**: `mariadb`
+- **User**: `root`
+- **Password**: `root`
 
 ## Installation / run
 
