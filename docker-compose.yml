@@ -8,7 +8,7 @@ services:
       - '3306:3306'
     volumes:
       - ./data/mariadb:/config
-    environemnts:
+    environment:
       - PUID=1000
       - PGID=1000
       - MYSQL_DATABSE=docker
